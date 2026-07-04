@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南京 · 난징 여행 가이드 2026.7.5–8</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a1e;
+  --paper: #f5f2ec;
+  --accent: #c4463a;
+  --river: #3a6b8c;
+  --gold: #b8943e;
+  --stone: #6b6560;
+  --mist: #e8e4dc;
+  --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HERO */
+.hero {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '南京';
+  position: absolute;
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(120px, 25vw, 300px);
+  font-weight: 900;
+  opacity: 0.04;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.hero h1 span { color: var(--accent); }
+.hero-sub {
+  font-size: 15px;
+  color: #9a958e;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* FLIGHT INFO BAR */
+.flight-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--mist);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.flight-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.flight-label {
+  color: var(--stone);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.flight-value {
+  font-weight: 700;
+  font-size: 14px;
+}
+.flight-arrow {
+  color: var(--accent);
+  font-size: 16px;
+}
+
+/* NAV */
+.category-nav {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--mist);
+  padding: 0 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.category-nav::-webkit-scrollbar { display: none; }
+.category-nav-inner {
+  display: flex;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.category-nav a {
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--stone);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.category-nav a:hover,
+.category-nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* MAIN */
+.main { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+/* SECTION */
+.section {
+  padding: 56px 0 40px;
+  border-bottom: 1px solid var(--mist);
+}
+.section:last-child { border-bottom: none; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.section-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+.section-count {
+  font-size: 12px;
+  color: var(--stone);
+  background: var(--mist);
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+/* PLACE CARD */
+.place-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 0 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  align-items: start;
+}
+.place-card:last-child { border-bottom: none; }
+
+.place-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--mist);
+  text-align: center;
+  padding-top: 2px;
+  line-height: 1;
+}
+
+.place-body { min-width: 0; }
+
+.place-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.place-name {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.place-name-cn {
+  font-size: 13px;
+  color: var(--stone);
+}
+
+.place-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-right: 4px;
+  margin-top: 4px;
+}
+.tag-walk { background: #e8f5e9; color: #2e7d32; }
+.tag-metro { background: #e3f2fd; color: #1565c0; }
+.tag-taxi { background: #fff3e0; color: #e65100; }
+.tag-free { background: #fce4ec; color: #c62828; }
+.tag-closed-mon { background: #ffebee; color: #b71c1c; }
+
+.place-desc {
+  font-size: 14px;
+  color: #4a4540;
+  margin-top: 6px;
+  line-height: 1.75;
+}
+
+.place-meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--stone);
+  flex-wrap: wrap;
+}
+.place-meta span { white-space: nowrap; }
+
+/* SCHEDULE */
+.schedule {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 32px 28px;
+  margin: 48px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.schedule-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.day-block { margin-bottom: 28px; }
+.day-block:last-child { margin-bottom: 0; }
+
+.day-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.day-stops {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.day-stop {
+  font-size: 12px;
+  background: var(--paper);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.day-stop-arrow {
+  color: var(--stone);
+  font-size: 11px;
+  align-self: center;
+}
+
+/* FOOD SECTION */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.food-item {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 20px;
+}
+.food-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.food-name-cn {
+  font-size: 12px;
+  color: var(--stone);
+}
+.food-desc {
+  font-size: 13px;
+  color: #4a4540;
+  margin-top: 8px;
+  line-height: 1.7;
+}
+
+/* TIPS */
+.tips-box {
+  background: linear-gradient(135deg, var(--river), #2d5570);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 32px 28px;
+  margin: 40px 0;
+}
+.tips-box h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.tips-list {
+  list-style: none;
+  font-size: 14px;
+  line-height: 2;
+}
+.tips-list li::before {
+  content: '→ ';
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* COPY LIST */
+.search-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+.search-item {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1px solid transparent;
+}
+.search-item:hover { border-color: var(--accent); }
+.search-item:active { background: var(--mist); }
+.search-cn {
+  font-size: 17px;
+  font-weight: 700;
+}
+.search-kr {
+  font-size: 12px;
+  color: var(--stone);
+  text-align: right;
+  white-space: nowrap;
+}
+.copy-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ink);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 999;
+}
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* AMAP GUIDE */
+.amap-box {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 32px 28px;
+  margin: 16px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.amap-step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.amap-step:last-child { border-bottom: none; }
+.amap-step-num {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.amap-step-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+.amap-step-desc {
+  font-size: 13px;
+  color: #4a4540;
+  line-height: 1.75;
+}
+.amap-step-path {
+  font-family: monospace;
+  background: var(--mist);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--ink);
+}
+.amap-extra {
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--paper);
+  border-radius: 8px;
+}
+.amap-extra-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.amap-extra-list {
+  list-style: none;
+  font-size: 13px;
+  line-height: 2;
+  color: #4a4540;
+}
+.amap-extra-list li::before {
+  content: '• ';
+  color: var(--accent);
+  font-weight: 700;
+}
+.folder-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.folder-table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: var(--mist);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--stone);
+  letter-spacing: 0.5px;
+}
+.folder-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  vertical-align: top;
+}
+.folder-name {
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--accent);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 12px;
+  color: var(--stone);
+  border-top: 1px solid var(--mist);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero { padding: 60px 20px 40px; }
+  .flight-bar { gap: 16px; padding: 16px 20px; }
+  .main { padding: 0 16px; }
+  .schedule { padding: 24px 20px; }
+  .place-card { grid-template-columns: 36px 1fr; gap: 0 12px; }
+  .place-num { font-size: 22px; }
+  .category-nav a { padding: 12px 14px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">3박 4일 · 2026년 7월</div>
+  <h1>난징<span>.</span> 여행 가이드</h1>
+  <p class="hero-sub">
+    六朝古都 · 장강의 도시 · 중화제일상권<br>
+    역사, 장강, 스카이라인, 번화가를 아우르는 24곳 완전 정리
+  </p>
+</div>
+
+<!-- FLIGHT BAR -->
+<div class="flight-bar">
+  <div class="flight-item">
+    <div>
+      <div class="flight-label">출발</div>
+      <div class="flight-value">7/5 (일) 10:25 ICN</div>
+    </div>
+    <span class="flight-arrow">✈</span>
+    <div>
+      <div class="flight-label">도착</div>
+      <div class="flight-value">11:50 NKG</div>
+    </div>
+  </div>
+  <div class="flight-item">
+    <div>
+      <div class="flight-label">귀국</div>
+      <div class="flight-value">7/8 (수) 14:50 NKG</div>
+    </div>
+    <span class="flight-arrow">✈</span>
+    <div>
+      <div class="flight-label">도착</div>
+      <div class="flight-value">ICN</div>
+    </div>
+  </div>
+  <div class="flight-item">
+    <div class="flight-label">편명</div>
+    <div class="flight-value">OZ349 / OZ350</div>
+  </div>
+  <div class="flight-item">
+    <div class="flight-label">숙소</div>
+    <div class="flight-value">Central Hotel · 中山路75号</div>
+  </div>
+</div>
+
+<!-- CATEGORY NAV -->
+<nav class="category-nav">
+  <div class="category-nav-inner">
+    <a href="#history">🏛 역사 유적</a>
+    <a href="#cityscape">🌆 도시 풍광</a>
+    <a href="#skyline">🔭 전망</a>
+    <a href="#yangtze">🌊 장강</a>
+    <a href="#shopping">🛍 번화가</a>
+    <a href="#food">🍜 대표 음식</a>
+    <a href="#schedule">📋 일정표</a>
+    <a href="#amap">📱 가오더 앱</a>
+    <a href="#search-list">🔍 검색 목록</a>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- ==================== 역사 유적 ==================== -->
+<section class="section" id="history">
+  <div class="section-header">
+    <span class="section-icon">🏛</span>
+    <h2 class="section-title">역사 유적</h2>
+    <span class="section-count">7곳</span>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">01</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">총통부</span>
+        <span class="place-name-cn">总统府</span>
+      </div>
+      <span class="place-tag tag-walk">도보 20분</span>
+      <span class="place-tag tag-closed-mon">월요일 휴관</span>
+      <p class="place-desc">태평천국 천왕부 → 청나라 양강총독부 → 중화민국 대통령부. 한 건물에 세 시대가 겹쳐 있는 근현대사의 축약판. 장제스 집무실과 뒤쪽 강남 정원까지 2~3시간 코스.</p>
+      <div class="place-meta"><span>💰 35元</span><span>⏱ 2~3시간</span><span>📍 숙소에서 1.3km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">02</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">부자묘 · 친화이허</span>
+        <span class="place-name-cn">夫子庙 · 秦淮河</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 3호선 2정거장</span>
+      <p class="place-desc">1034년 송나라 공자묘 중심의 학문 거리. 강남공원(과거시험장) 유적과 친화이허 야간 유람선이 핵심. 낮보다 밤이 압도적. 난징 5대 상권 중 하나.</p>
+      <div class="place-meta"><span>🌙 야경 필수</span><span>🚢 유람선 80~100元</span><span>📍 2.7km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">03</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">중화문</span>
+        <span class="place-name-cn">中华门</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 3정거장</span>
+      <p class="place-desc">명나라 주원장이 쌓은 세계 최대 규모 고대 성문. 4중 옹성 구조에 병사 3,000명을 숨길 수 있는 은폐 공간 27개. 성벽 위를 걸으며 도시 조망 가능.</p>
+      <div class="place-meta"><span>📍 3.6km</span><span>⏱ 1~1.5시간</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">04</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">조천궁</span>
+        <span class="place-name-cn">朝天宫</span>
+      </div>
+      <span class="place-tag tag-walk">도보 25분</span>
+      <p class="place-desc">명나라 조정 의례 연습장, 청나라 때 공자묘로 개축. 현재 난징시 박물관 입주. 입구 돌계단을 미끄럼틀 삼아 노는 아이들이 난징의 명물.</p>
+      <div class="place-meta"><span>👥 관광객 적음</span><span>📍 1.4km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">05</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">계명사</span>
+        <span class="place-name-cn">鸡鸣寺</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 3·4호선</span>
+      <p class="place-desc">1,700년 역사의 난징 최고(最古) 불교 사찰. 꼭대기 탑에서 현무호·성벽·쯔펑타워 스카이라인이 한눈에. 사찰 안 채식 식당도 유명.</p>
+      <div class="place-meta"><span>💰 15元</span><span>📍 2.0km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">06</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">중산릉</span>
+        <span class="place-name-cn">中山陵</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 2호선 + 버스</span>
+      <span class="place-tag tag-free">무료(예약 필수)</span>
+      <span class="place-tag tag-closed-mon">월요일 휴관</span>
+      <p class="place-desc">쑨원(손중산)의 릉묘. 392계단을 올라가면 난징 시내 전체 조망. 위챗 사전 예약 필수, 스크린샷 불가(실시간 QR).</p>
+      <div class="place-meta"><span>⏱ 2~3시간</span><span>📍 6.8km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">07</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">명효릉</span>
+        <span class="place-name-cn">明孝陵</span>
+      </div>
+      <span class="place-tag tag-metro">중산릉 옆</span>
+      <p class="place-desc">명나라 개국 황제 주원장의 무덤. 유네스코 세계문화유산. 신도(神道)의 석상 행렬이 압권 — 코끼리, 낙타, 기린 등 돌짐승 도열.</p>
+      <div class="place-meta"><span>💰 70元</span><span>⏱ 2시간</span><span>📍 5.2km</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 도시 풍광 ==================== -->
+<section class="section" id="cityscape">
+  <div class="section-header">
+    <span class="section-icon">🌆</span>
+    <h2 class="section-title">도시 풍광</h2>
+    <span class="section-count">4곳</span>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">08</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">1912 거리</span>
+        <span class="place-name-cn">南京1912街区</span>
+      </div>
+      <span class="place-tag tag-walk">도보 15분</span>
+      <p class="place-desc">총통부 바로 옆 민국풍 건물 바·카페·레스토랑 블록. 밤에는 루프탑 바에서 한잔. 크래프트 맥주 바 "Woo Cloud"가 외국인에게 인기.</p>
+      <div class="place-meta"><span>🌙 야간 추천</span><span>📍 1.2km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">09</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">이허루 민국풍거리</span>
+        <span class="place-name-cn">颐和路</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 10분</span>
+      <p class="place-desc">플라타너스 가로수 울창한 조용한 주택가. 중화민국 시절 관료·외교관 저택이 그대로. 유럽 소도시 같은 분위기, 카페 산재. 관광객 적어 여유로움.</p>
+      <div class="place-meta"><span>📷 사진 맛집</span><span>📍 2.3km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">10</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">현무호</span>
+        <span class="place-name-cn">玄武湖</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 1정거장</span>
+      <span class="place-tag tag-free">무료</span>
+      <p class="place-desc">도심 한복판 거대 호수공원. 동안(东岸)에서 바라보는 쯔펑타워 스카이라인 반사가 "난징 최미 천제선"으로 유명. 보트 대여, 일몰 산책 추천.</p>
+      <div class="place-meta"><span>📍 2.8km</span><span>🌅 일몰 추천</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">11</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">라오먼동</span>
+        <span class="place-name-cn">老门东</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 3정거장</span>
+      <p class="place-desc">중화문 동쪽 복원된 전통 골목 거리. 돌길·전통 건물 사이로 공방, 찻집, 간식 가게. 밤에 홍등 켜지면 분위기 확 살아남. 부자묘보다 덜 붐비고 더 예쁨.</p>
+      <div class="place-meta"><span>🌙 야간 분위기 좋음</span><span>📍 3.8km</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 전망 ==================== -->
+<section class="section" id="skyline">
+  <div class="section-header">
+    <span class="section-icon">🔭</span>
+    <h2 class="section-title">전망 · 스카이라인</h2>
+    <span class="section-count">4곳</span>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">12</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">덕기광장</span>
+        <span class="place-name-cn">德基广场</span>
+      </div>
+      <span class="place-tag tag-walk">도보 3분</span>
+      <p class="place-desc">2024년 매출 245억 위안, 세계 단일 매장 신기록. 국제 1선 브랜드 95% 입점. 안에 덕기예술박물관이 자정까지 운영 — 모네·피카소 진작 전시 + 《금릉도》 디지털 아트.</p>
+      <div class="place-meta"><span>🕐 자정까지 박물관</span><span>📍 200m</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">13</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">진잉세계</span>
+        <span class="place-name-cn">金鹰世界</span>
+      </div>
+      <span class="place-tag tag-walk">도보 5분</span>
+      <p class="place-desc">세계 최고층 3탑 연결 건물. 옥상 유리 전망대에서 발밑 투명 상태로 난징 시가지 조망. 쯔펑타워와 반대 방향(남쪽) 시점으로 조합하면 완벽.</p>
+      <div class="place-meta"><span>🔭 유리 전망대</span><span>📍 500m</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">14</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">쯔펑타워</span>
+        <span class="place-name-cn">紫峰大厦</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 1호선 고루역</span>
+      <p class="place-desc">높이 450m 난징 최고층 빌딩. 72층 전망 레스토랑에서 식사하며 360도 파노라마. 현무호·쯔진산·장강까지 한눈에. "난징의 신의 시점".</p>
+      <div class="place-meta"><span>📍 1.8km</span><span>🌃 야경 추천</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">15</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">쯔진산 천문대</span>
+        <span class="place-name-cn">紫金山天文台</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 + 케이블카</span>
+      <p class="place-desc">중산릉 근처에서 케이블카로 접근. 1928년 설립 "중국 현대 천문학의 요람". 천문대 광장에서 난징 시가지 전경 조망.</p>
+      <div class="place-meta"><span>📍 5km</span><span>🌅 일몰·야경</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 장강 ==================== -->
+<section class="section" id="yangtze">
+  <div class="section-header">
+    <span class="section-icon">🌊</span>
+    <h2 class="section-title">장강 (양쯔강)</h2>
+    <span class="section-count">8곳</span>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">16</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">열강루</span>
+        <span class="place-name-cn">阅江楼</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 15분</span>
+      <p class="place-desc">사자산 정상 "강남 제일루". 주원장이 구상만 하고 600년간 못 지었다가 2001년 완공. 에스컬레이터 설치. 장강+장강대교 파노라마 조감.</p>
+      <div class="place-meta"><span>💰 40元</span><span>📍 5.8km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">17</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">난징 장강대교</span>
+        <span class="place-name-cn">南京长江大桥</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 20분</span>
+      <p class="place-desc">1968년 완공, 중국 최초 자력 설계 장강 다리. 남동쪽 유리 전망대에서 다리+강 동시 조망. 석양에 화물선 지나는 장면이 압권.</p>
+      <div class="place-meta"><span>🌅 석양 필수</span><span>📍 7.8km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">18</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">무푸산</span>
+        <span class="place-name-cn">幕府山</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 25분</span>
+      <p class="place-desc">장강 남안 구릉 지대. 전망대에서 장강 시원하게 조망. 달마동(达摩洞), 관음각 등 역사 유적 곳곳. 관광객 적어 조용히 걷기 좋음.</p>
+      <div class="place-meta"><span>📍 8.5km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">19</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">우마두 광장</span>
+        <span class="place-name-cn">五马渡广场</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 25분</span>
+      <p class="place-desc">무옌 빈장 풍모구 서쪽 끝점. 장강변 넓은 광장. "장강전기" 유람선 선착장 — 장강대교 아래 통과하며 양안 스카이라인 감상.</p>
+      <div class="place-meta"><span>🚢 유람선 선착장</span><span>📍 9km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">20</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">무옌 빈장 풍모구</span>
+        <span class="place-name-cn">幕燕滨江风貌区</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 30분</span>
+      <p class="place-desc">옌쯔지에서 우마두 광장까지 5.7km 장강변 풍광 벨트. 관광 소형 열차 운행. 고금릉 48경 중 6개가 이 구간에 밀집.</p>
+      <div class="place-meta"><span>🚂 관광열차</span><span>📍 11km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">21</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">옌쯔지 (제비바위)</span>
+        <span class="place-name-cn">燕子矶</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 35분</span>
+      <p class="place-desc">장강으로 돌출된 절벽 공원. 청나라 건륭제가 세 번 방문해 시를 남긴 곳. 바위 위에서 내려다보는 장강의 규모감이 남다름.</p>
+      <div class="place-meta"><span>📍 11.4km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">22</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">위쭈이 습지공원</span>
+        <span class="place-name-cn">鱼嘴湿地公园</span>
+      </div>
+      <span class="place-tag tag-taxi">택시 30분</span>
+      <span class="place-tag tag-free">무료</span>
+      <p class="place-desc">난징 구간 장강 강폭 최광 지점. 장강이 두 갈래로 나뉘는 곶에 서면 양쪽 끝없는 강물. 빨간 등대(网红灯塔) + 석양 = 난징 석양 성지.</p>
+      <div class="place-meta"><span>🌅 석양 필수</span><span>📍 12km</span></div>
+    </div>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num">23</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">난징아이</span>
+        <span class="place-name-cn">南京眼</span>
+      </div>
+      <span class="place-tag tag-metro">지하철 2→10호선 30분</span>
+      <p class="place-desc">장강 지류(자강) 위 보행 전용 다리. 허시(河西) CBD 쌍둥이 타워·올림픽센터 야간 조명 조망. 금~일 야간 조명 점등.</p>
+      <div class="place-meta"><span>🌃 금~일 야간조명</span><span>📍 9km</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 번화가 ==================== -->
+<section class="section" id="shopping">
+  <div class="section-header">
+    <span class="section-icon">🛍</span>
+    <h2 class="section-title">번화가 · 신제커우</h2>
+    <span class="section-count">숙소 주변</span>
+  </div>
+
+  <div class="place-card">
+    <div class="place-num" style="color: var(--accent);">★</div>
+    <div class="place-body">
+      <div class="place-name-row">
+        <span class="place-name">신제커우 상권</span>
+        <span class="place-name-cn">新街口 · 中華第一商圈</span>
+      </div>
+      <p class="place-desc">
+        2025년 중국 상권 상업력 전국 2위 (베이징 CBD 다음, 상하이 루자쭈이보다 위). 화동 지역 인기도 1위. 숙소가 바로 이 한복판에 위치.
+        일평균 유동인구 50만+, 대형 쇼핑몰 10곳+, 연간 매출 40억 위안 이상 쇼핑몰이 4개 — 중국 유일. 따로 시간 낼 필요 없이 매일 자연스럽게 체험.
+      </p>
+      <div class="place-meta">
+        <span>덕기광장 도보 3분</span>
+        <span>진잉세계 도보 5분</span>
+        <span>중앙상장(1936년) 도보 3분</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 대표 음식 ==================== -->
+<section class="section" id="food">
+  <div class="section-header">
+    <span class="section-icon">🍜</span>
+    <h2 class="section-title">난징 대표 음식</h2>
+  </div>
+
+  <div class="food-grid">
+    <div class="food-item">
+      <div class="food-name">옌수이야 <span class="food-name-cn">盐水鸭</span></div>
+      <p class="food-desc">난징 시그니처. 소금물에 절인 백숙 오리. 차게 나옴 — 원래 그런 요리. 반 마리(半只) 단위 포장 가능.</p>
+    </div>
+    <div class="food-item">
+      <div class="food-name">야쉐펀쓰탕 <span class="food-name-cn">鸭血粉丝汤</span></div>
+      <p class="food-desc">오리피 두부·내장·당면을 오리뼈 육수에. 비린내 없고 담백. 15~25元. 샤오판지(小潘记)가 미쉐린 빕구르망.</p>
+    </div>
+    <div class="food-item">
+      <div class="food-name">스즈터우 <span class="food-name-cn">狮子头</span></div>
+      <p class="food-desc">주먹만 한 돼지고기 완자 조림. 난징 다파이당(南京大牌档)에서 맛보기 좋음.</p>
+    </div>
+    <div class="food-item">
+      <div class="food-name">탕바오 <span class="food-name-cn">汤包</span></div>
+      <p class="food-desc">육즙만두. 지밍탕바오(鸡鸣汤包) 로컬 체인이 유명.</p>
+    </div>
+    <div class="food-item">
+      <div class="food-name">진링카오야 <span class="food-name-cn">金陵烤鸭</span></div>
+      <p class="food-desc">베이징 카오야보다 담백하고 겉바속촉. 소스 방식이 다름.</p>
+    </div>
+    <div class="food-item">
+      <div class="food-name">뉴러우궈톄 <span class="food-name-cn">牛肉锅贴</span></div>
+      <p class="food-desc">소고기 군만두. 부자묘 야시장 간식.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 일정표 ==================== -->
+<div class="schedule" id="schedule">
+  <div class="schedule-title">📋 4일 일정 요약</div>
+
+  <div class="day-block">
+    <div class="day-label">Day 1 — 7/5 (일) 도착일 반나절</div>
+    <div class="day-stops">
+      <span class="day-stop">공항→숙소</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">야쉐펀쓰탕 첫끼</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">총통부</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">1912 거리</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">다파이당 저녁</span>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Day 2 — 7/6 (월) 올드타운 + 장강 <span style="font-weight:400; color:var(--stone);">총통부·중산릉 휴관일</span></div>
+    <div class="day-stops">
+      <span class="day-stop">중화문</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">라오먼동</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">부자묘</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">휴식</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">열강루</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">장강대교 석양</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">부자묘 야경 유람선</span>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Day 3 — 7/7 (화) 쯔진산 + 시티감성</div>
+    <div class="day-stops">
+      <span class="day-stop">중산릉</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">명효릉</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">이허루 산책</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">점심</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">쯔펑타워 전망</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">현무호</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">난징아이 야경</span>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Day 4 — 7/8 (수) 출발일 오전</div>
+    <div class="day-stops">
+      <span class="day-stop">조천궁 산책</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">체크아웃</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">옌수이야 포장</span>
+      <span class="day-stop-arrow">→</span>
+      <span class="day-stop">공항 (12:00)</span>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="tips-box">
+  <h3>⚡ 핵심 유의사항</h3>
+  <ul class="tips-list">
+    <li>월요일(7/6) 총통부·중산릉 휴관 — 일정 Day 2에서 의도적으로 제외</li>
+    <li>중산릉 위챗 사전예약 필수 — 스크린샷 불가, 실시간 QR만 인식</li>
+    <li>오리 요리(옌수이야)는 차게 나옴 — 데워달라고 하지 말 것, 원래 그런 요리</li>
+    <li>지하철 알리페이 "南京地铁电子卡"로 결제 가능</li>
+    <li>7월 난징은 30°C+, 자외선 강함 — 양산·물·자외선차단 필수</li>
+    <li>덕기예술박물관 자정까지 — 아무 날 저녁 식사 후 들르기 좋음</li>
+    <li>공항 이동: 지하철 S1+1호선 70분 7~8元 / 택시 50분 120~150元</li>
+  </ul>
+</div>
+
+<!-- ==================== 가오더 앱 가이드 ==================== -->
+<section class="section" id="amap">
+  <div class="section-header">
+    <span class="section-icon">📱</span>
+    <h2 class="section-title">가오더지투 (高德地图) 앱 활용법</h2>
+  </div>
+
+  <div class="amap-box">
+    <div style="font-size:14px; color:var(--stone); margin-bottom:20px; line-height:1.7;">
+      중국 현지 지도·내비게이션·택시 호출까지 하나로 해결하는 필수 앱. 아래 순서대로 설정하면 현지에서 바로 활용 가능.
+    </div>
+
+    <div class="amap-step">
+      <div class="amap-step-num">1</div>
+      <div>
+        <div class="amap-step-title">수집함(收藏夹) 만들기</div>
+        <div class="amap-step-desc">
+          하단 <span class="amap-step-path">我的</span> 탭 → <span class="amap-step-path">收藏夹</span> → 우측 상단 <span class="amap-step-path">创建收藏夹</span><br>
+          이름을 "南京旅行"으로 설정. 비공개(私密) 체크 권장.
+        </div>
+      </div>
+    </div>
+
+    <div class="amap-step">
+      <div class="amap-step-num">2</div>
+      <div>
+        <div class="amap-step-title">장소 검색 → 수집</div>
+        <div class="amap-step-desc">
+          상단 검색창에 중국어 이름 입력 (아래 검색 목록 참조) → 검색 결과 터치 → 상세 페이지의 <span class="amap-step-path">⭐ 收藏</span> 버튼 → "南京旅行" 수집함에 저장. 24곳 등록에 약 10~15분.
+        </div>
+      </div>
+    </div>
+
+    <div class="amap-step">
+      <div class="amap-step-num">3</div>
+      <div>
+        <div class="amap-step-title">현지에서 내비게이션</div>
+        <div class="amap-step-desc">
+          <span class="amap-step-path">我的</span> → <span class="amap-step-path">收藏夹</span> → "南京旅行" → 원하는 장소 터치 → <span class="amap-step-path">到这去</span>(여기로 가기) → 도보/지하철/택시 선택.
+        </div>
+      </div>
+    </div>
+
+    <div class="amap-step">
+      <div class="amap-step-num">4</div>
+      <div>
+        <div class="amap-step-title">택시 호출 (打车)</div>
+        <div class="amap-step-desc">
+          수집한 장소 상세 페이지에서 <span class="amap-step-path">打车</span> 버튼으로 바로 DiDi 택시 호출 가능. 별도 앱 설치 불필요. 알리페이 결제 연동.
+        </div>
+      </div>
+    </div>
+
+    <div class="amap-step">
+      <div class="amap-step-num">5</div>
+      <div>
+        <div class="amap-step-title">지도에서 길게 눌러 수집</div>
+        <div class="amap-step-desc">
+          검색 없이 지도 위 원하는 위치를 <strong>길게 누르면(长按)</strong> 팝업 → <span class="amap-step-path">收藏</span> 선택. 현지에서 발견한 장소를 즉시 저장할 때 유용.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="amap-extra-title">💡 추천 수집함 분류</div>
+      <table class="folder-table">
+        <tr><th>수집함 이름</th><th>넣을 장소</th></tr>
+        <tr><td class="folder-name">南京-历史</td><td>总统府, 夫子庙, 中华门, 中山陵, 明孝陵, 朝天宫, 鸡鸣寺</td></tr>
+        <tr><td class="folder-name">南京-城市</td><td>1912街区, 颐和路, 玄武湖, 老门东</td></tr>
+        <tr><td class="folder-name">南京-长江</td><td>阅江楼, 长江大桥, 幕府山, 燕子矶, 鱼嘴湿地公园, 南京眼, 五马渡广场, 幕燕滨江</td></tr>
+        <tr><td class="folder-name">南京-展望</td><td>德基广场, 金鹰世界, 紫峰大厦, 紫金山天文台</td></tr>
+        <tr><td class="folder-name">南京-吃</td><td>小潘记, 南京大牌档, 明瓦廊</td></tr>
+      </table>
+    </div>
+
+    <div class="amap-extra">
+      <div class="amap-extra-title">📦 출발 전 필수 설정</div>
+      <ul class="amap-extra-list">
+        <li><strong>오프라인 지도</strong>: 我的 → 离线地图 → "南京" 다운로드 (데이터 불안정 대비)</li>
+        <li><strong>실시간 버스</strong>: 검색창에 버스 노선 번호 입력하면 실시간 도착 시간 확인 가능</li>
+        <li><strong>언어 설정</strong>: 设置 → 语言 → English 선택 가능 (지도 표기는 여전히 중국어)</li>
+        <li><strong>알리페이 결제</strong>: 打车(택시) 이용 시 알리페이/위챗페이 연동 필수</li>
+        <li><strong>지하철 전자카드</strong>: 알리페이 검색 "南京地铁电子卡" → 교통카드 없이 QR로 탑승</li>
+        <li><strong>클라우드 동기화</strong>: 로그인 상태면 수집함이 클라우드 동기화 — 기기 변경해도 유지</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 중국어 검색 목록 ==================== -->
+<section class="section" id="search-list">
+  <div class="section-header">
+    <span class="section-icon">🔍</span>
+    <h2 class="section-title">가오더 검색용 중국어 목록</h2>
+    <span class="section-count">터치하면 복사</span>
+  </div>
+
+  <div style="font-size:13px; color:var(--stone); margin-bottom:16px; line-height:1.7;">
+    각 항목을 터치하면 중국어 이름이 클립보드에 복사됩니다. 가오더 앱 검색창에 바로 붙여넣기 하세요.
+  </div>
+
+  <div style="font-size:12px; font-weight:700; color:var(--accent); margin:20px 0 8px; letter-spacing:1px;">숙소</div>
+  <div class="search-list-grid">
+    <div class="search-item" onclick="copyText('南京中心大酒店', this)"><span class="search-cn">南京中心大酒店</span><span class="search-kr">숙소</span></div>
+  </div>
+
+  <div style="font-size:12px; font-weight:700; color:var(--accent); margin:20px 0 8px; letter-spacing:1px;">🏛 역사 유적</div>
+  <div class="search-list-grid">
+    <div class="search-item" onclick="copyText('总统府', this)"><span class="search-cn">总统府</span><span class="search-kr">총통부</span></div>
+    <div class="search-item" onclick="copyText('夫子庙', this)"><span class="search-cn">夫子庙</span><span class="search-kr">부자묘</span></div>
+    <div class="search-item" onclick="copyText('中华门', this)"><span class="search-cn">中华门</span><span class="search-kr">중화문</span></div>
+    <div class="search-item" onclick="copyText('朝天宫', this)"><span class="search-cn">朝天宫</span><span class="search-kr">조천궁</span></div>
+    <div class="search-item" onclick="copyText('鸡鸣寺', this)"><span class="search-cn">鸡鸣寺</span><span class="search-kr">계명사</span></div>
+    <div class="search-item" onclick="copyText('中山陵', this)"><span class="search-cn">中山陵</span><span class="search-kr">중산릉</span></div>
+    <div class="search-item" onclick="copyText('明孝陵', this)"><span class="search-cn">明孝陵</span><span class="search-kr">명효릉</span></div>
+  </div>
+
+  <div style="font-size:12px; font-weight:700; color:var(--accent); margin:20px 0 8px; letter-spacing:1px;">🌆 도시 풍광</div>
+  <div class="search-list-grid">
+    <div class="search-item" onclick="copyText('1912街区', this)"><span class="search-cn">1912街区</span><span class="search-kr">1912 거리</span></div>
+    <div class="search-item" onclick="copyText('颐和路', this)"><span class="search-cn">颐和路</span><span class="search-kr">이허루</span></div>
+    <div class="search-item" onclick="copyText('玄武湖', this)"><span class="search-cn">玄武湖</span><span class="search-kr">현무호</span></div>
+    <div class="search-item" onclick="copyText('老门东', this)"><span class="search-cn">老门东</span><span class="search-kr">라오먼동</span></div>
+  </div>
+
+  <div style="font-size:12px; font-weight:700; color:var(--accent); margin:20px 0 8px; letter-spacing:1px;">🔭 전망 · 스카이라인</div>
+  <div class="search-list-grid">
+    <div class="search-item" onclick="copyText('德基广场', this)"><span class="search-cn">德基广场</span><span class="search-kr">덕기광장</span></div>
+    <div class="search-item" onclick="copyText('金鹰世界', this)"><span class="search-cn">金鹰世界</span><span class="search-kr">진잉세계</span></div>
+    <div class="search-item" onclick="copyText('紫峰大厦', this)"><span class="search-cn">紫峰大厦</span><span class="search-kr">쯔펑타워</span></div>
+    <div class="search-item" onclick="copyText('紫金山天文台', this)"><span class="search-cn">紫金山天文台</span><span class="search-kr">천문대</span></div>
+  </div>
+
+  <div style="font-size:12px; font-weight:700; color:var(--accent); margin:20px 0 8px; letter-spacing:1px;">🌊 장강</div>
+  <div class="search-list-grid">
+    <div class="search-item" onclick="copyText('阅江楼', this)"><span class="search-cn">阅江楼</span><span class="search-kr">열강루</span></div>
+    <div class="search-item" onclick="copyText('南京长江大桥', this)"><span class="search-cn">南京长江大桥</span><span class="search-kr">장강대교</span></div>
+    <div class="search-item" onclick="copyText('幕府山', this)"><span class="search-cn">幕府山</span><span class="search-kr">무푸산</span></div>
+    <div class="search-item" onclick="copyText('五马渡广场', this)"><span class="search-cn">五马渡广场</span><span class="search-kr">우마두 광장</span></div>
+    <div class="search-item" onclick="copyText('幕燕滨江风貌区', this)"><span class="search-cn">幕燕滨江风貌区</span><span class="search-kr">무옌 빈장</span></div>
+    <div class="search-item" onclick="copyText('燕子矶', this)"><span class="search-cn">燕子矶</span><span class="search-kr">옌쯔지</span></div>
+    <div class="search-item" onclick="copyText('鱼嘴湿地公园', this)"><span class="search-cn">鱼嘴湿地公园</span><span class="search-kr">위쭈이 습지</span></div>
+    <div class="search-item" onclick="copyText('南京眼', this)"><span class="search-cn">南京眼</span><span class="search-kr">난징아이</span></div>
+  </div>
+
+  <div style="font-size:12px; font-weight:700; color:var(--accent); margin:20px 0 8px; letter-spacing:1px;">🍜 식당 · 먹거리</div>
+  <div class="search-list-grid">
+    <div class="search-item" onclick="copyText('小潘记鸭血粉丝汤', this)"><span class="search-cn">小潘记鸭血粉丝汤</span><span class="search-kr">샤오판지</span></div>
+    <div class="search-item" onclick="copyText('南京大牌档 德基', this)"><span class="search-cn">南京大牌档 德基</span><span class="search-kr">다파이당</span></div>
+    <div class="search-item" onclick="copyText('明瓦廊美食街', this)"><span class="search-cn">明瓦廊美食街</span><span class="search-kr">명와랑</span></div>
+    <div class="search-item" onclick="copyText('海底捞 中山南路', this)"><span class="search-cn">海底捞 中山南路</span><span class="search-kr">하이디라오</span></div>
+    <div class="search-item" onclick="copyText('鸡鸣汤包', this)"><span class="search-cn">鸡鸣汤包</span><span class="search-kr">지밍탕바오</span></div>
+  </div>
+
+</section>
+
+<!-- COPY TOAST -->
+<div class="copy-toast" id="copyToast">복사 완료 ✓</div>
+
+<script>
+function copyText(text, el) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() { showToast(text); });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast(text);
+  }
+  el.style.borderColor = 'var(--accent)';
+  setTimeout(function() { el.style.borderColor = 'transparent'; }, 600);
+}
+function showToast(text) {
+  var t = document.getElementById('copyToast');
+  t.textContent = text + ' 복사 완료 ✓';
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 1500);
+}
+</script>
+
+</div><!-- /main -->
+
+<div class="footer">
+  난징 여행 가이드 · 2026.7.5–8 · 3박 4일 · 24곳 정리<br>
+  OZ349 ICN 10:25 → NKG 11:50 / OZ350 NKG 14:50 → ICN
+</div>
+
+</body>
+</html>
